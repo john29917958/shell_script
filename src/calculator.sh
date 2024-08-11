@@ -19,7 +19,7 @@ function add() {
 	# echo "You have choosed to add two numbers."
 	read -p "Please input a number: " num1
 	read -p "Please input second number: " num2
-	local result=$(($num1 + $num2))
+	local result=$(echo "$num1 + $num2" | bc | awk '{printf "%f", $0}')
 	echo $result
 }
 
@@ -27,7 +27,7 @@ function subtract() {
 	# echo "You have choosed to subtract two numbers."
 	read -p "Please input a number: " num1
 	read -p "Please input second number: " num2
-	result=$(($num1 - $num2))
+	local result=$(echo "$num1 - $num2" | bc | awk '{printf "%f", $0}')
 	echo $result
 }
 
@@ -35,7 +35,7 @@ function multiply() {
 	# echo "You have choosed to multiply two numbers."
 	read -p "Please input a number: " num1
 	read -p "Please input second number: " num2
-	result=$(($num1 * $num2))
+	local result=$(echo "$num1 * $num2" | bc | awk '{printf "%f", $0}')
 	echo $result
 }
 
@@ -43,7 +43,7 @@ function divide() {
 	# echo "You have choosed to divide two numbers."
 	read -p "Please input a number: " num1
 	read -p "Please input second number: " num2
-	result=$(($num1 / $num2))
+	local result=$(echo "$num1 / $num2" | bc | awk '{printf "%f", $0}')
 	echo $result
 }
 
