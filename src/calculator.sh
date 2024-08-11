@@ -6,15 +6,6 @@
 # 3: Multiply two numbers
 # 4: Divide
 
-echo "Welcome to a simple Bash calculator!"
-echo "Please input a function number or q to exit."
-echo "Functions:"
-echo "1: Add two numbers"
-echo "2: Substract two numbers"
-echo "3: Multiply two numbers"
-echo "4: Divide two numbers"
-read -p "Your input: " input
-
 function add() {
 	# echo "You have choosed to add two numbers."
 	read -p "Please input a number: " num1
@@ -47,6 +38,22 @@ function divide() {
 	echo $result
 }
 
+function read_input() {
+	read -r -d "" read_message <<- EOM
+		Please input a function number or q to exit.
+		Functions:
+		1: Add two numbers
+		2: Substract two numbers
+		3: Multiply two numbers
+		4: Divide two numbers
+		Your input:
+	EOM
+	read -p "$read_message " input
+	echo $input
+}
+
+echo "Welcome to a simple Bash calculator!"
+input=$(read_input)
 result=""
 while [[ $input != "q" ]]; do
 	if [[ $input -eq 1 ]]; then
@@ -65,11 +72,6 @@ while [[ $input != "q" ]]; do
 		echo "Invalid input!"
 	fi
 
-	echo "Please input a function number or q to exit."
-	echo "Functions:"
-	echo "1: Add two numbers"
-	echo "2: Substract two numbers"
-	echo "3: Multiply two numbers"
-	echo "4: Divide two numbers"
-	read -p "Your input: " input
+	echo ""
+	input=$(read_input)
 done
