@@ -48,14 +48,28 @@ function divide() {
 }
 
 result=""
-if [ $input -eq 1 ]; then
-	result=$(add)
-elif [ $input -eq 2 ]; then
-	result=$(subtract)
-elif [ $input -eq 3 ]; then
-	result=$(multiply)
-elif [ $input -eq 4 ]; then
-	result=$(divide)
-fi
+while [[ $input != "q" ]]; do
+	if [[ $input -eq 1 ]]; then
+		result=$(add)
+		echo "The result is: $result"
+	elif [[ $input -eq 2 ]]; then
+		result=$(subtract)
+		echo "The result is: $result"
+	elif [[ $input -eq 3 ]]; then
+		result=$(multiply)
+		echo "The result is: $result"
+	elif [[ $input -eq 4 ]]; then
+		result=$(divide)
+		echo "The result is: $result"
+	else
+		echo "Invalid input!"
+	fi
 
-echo "The result is: $result"
+	echo "Please input a function number or q to exit."
+	echo "Functions:"
+	echo "1: Add two numbers"
+	echo "2: Substract two numbers"
+	echo "3: Multiply two numbers"
+	echo "4: Divide two numbers"
+	read -p "Your input: " input
+done
