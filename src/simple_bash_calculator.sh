@@ -181,19 +181,19 @@ show_help_message() {
 show_help_message
 input=$(read_func_num)
 while [ "$input" != "q" ]; do
-  if [ "$input" == "1" ]; then
+  if [ "$input" = "1" ]; then
     result=$(add_two_numbers)
     echo "The sum is: $result"
-  elif [ "$input" == "2" ]; then
+  elif [ "$input" = "2" ]; then
     result=$(subtract_two_numbers)
     echo "The difference is: $result"
-  elif [ "$input" == "3" ]; then
+  elif [ "$input" = "3" ]; then
     result=$(multiply_two_numbers)
     echo "The product is: $result"
-  elif [ "$input" == "4" ]; then
+  elif [ "$input" = "4" ]; then
     result=$(divide_two_numbers)
     echo "The quotient is: $result"
-  elif [ "$input" == "h" ]; then
+  elif [ "$input" = "h" ]; then
     show_help_message
   else
     echo "Invalid input!"
