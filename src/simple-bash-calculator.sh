@@ -31,7 +31,7 @@ add_two_numbers() {
 add() {
   local addend1=$1
   local addend2=$2
-  local sum=$(echo "$addend1 + $addend2" | bc | awk '{printf "%f", $0}')
+  local sum=$(echo "$addend1 + $addend2" | bc)
   echo $sum
 }
 
@@ -66,7 +66,7 @@ subtract_two_numbers() {
 subtract() {
   local minuend=$1
   local subtrahend=$2
-  local difference=$(echo "$minuend - $subtrahend" | bc | awk '{printf "%f", $0}')
+  local difference=$(echo "$minuend - $subtrahend" | bc)
   echo $difference
 }
 
@@ -102,7 +102,7 @@ multiply_two_numbers() {
 multiply() {
   local multiplier=$1
   local multiplicand=$2
-  local product=$(echo "$multiplier * $multiplicand" | bc | awk '{printf "%f", $0}')
+  local product=$(echo "$multiplier * $multiplicand" | bc)
   echo $product
 }
 
@@ -137,7 +137,7 @@ divide_two_numbers() {
 divide() {
   dividend=$1
   divisor=$2
-  local quotient=$(echo "$dividend / $divisor" | bc | awk '{printf "%f", $0}')
+  local quotient=$(echo "$dividend / $divisor" | bc)
   echo $quotient
 }
 
