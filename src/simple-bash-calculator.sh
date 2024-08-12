@@ -10,7 +10,6 @@
 #   The sum of two numbers read from user's input.
 #######################################
 add_two_numbers() {
-  # echo "You have choosed to add two numbers."
   local addend1
   local addend2
   read -p "Please input the first number as an addend: " -r addend1
@@ -46,7 +45,6 @@ add() {
 #   The difference of two numbers read from user's input.
 #######################################
 subtract_two_numbers() {
-  # echo "You have choosed to subtract two numbers."
   local minuend
   local subtrahend
   read -p "Please input the first number as the minuend: " -r minuend
@@ -82,7 +80,6 @@ subtract() {
 #   The product of two numbers.
 #######################################
 multiply_two_numbers() {
-  # echo "You have choosed to multiply two numbers."
   local multiplier
   local multiplicand
   read -p "Please input the first number as the multiplier: " -r multiplier
@@ -121,7 +118,6 @@ multiply() {
 divide_two_numbers() {
   local dividend
   local divisor
-  # echo "You have choosed to divide two numbers."
   read -p "Please input the first number as the dividend: " -r dividend
   read -p "Please input the second number as the divisor: " -r divisor
   local quotient=$(divide $dividend $divisor)
