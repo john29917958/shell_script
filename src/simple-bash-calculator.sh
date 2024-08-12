@@ -32,7 +32,7 @@ add() {
   local addend1=$1
   local addend2=$2
   local sum=$(echo "$addend1 + $addend2" | bc | awk '{printf "%f", $0}')
-  echo "$sum"
+  echo $sum
 }
 
 #######################################
@@ -50,7 +50,7 @@ subtract_two_numbers() {
   read -p "Please input the first number as the minuend: " -r minuend
   read -p "Please input the second number as the subtrahend: " -r subtrahend
   local difference=$(subtract "$minuend" "$subtrahend")
-  echo "$difference"
+  echo $difference
 }
 
 #######################################
@@ -67,7 +67,7 @@ subtract() {
   local minuend=$1
   local subtrahend=$2
   local difference=$(echo "$minuend - $subtrahend" | bc | awk '{printf "%f", $0}')
-  echo "$difference"
+  echo $difference
 }
 
 #######################################
@@ -85,7 +85,7 @@ multiply_two_numbers() {
   read -p "Please input the first number as the multiplier: " -r multiplier
   read -p "Please input the second number as the multiplicand: " -r multiplicand
   local product=$(multiply "$multiplier" "$multiplicand")
-  echo "$product"
+  echo $product
 }
 
 #######################################
@@ -103,7 +103,7 @@ multiply() {
   local multiplier=$1
   local multiplicand=$2
   local product=$(echo "$multiplier * $multiplicand" | bc | awk '{printf "%f", $0}')
-  echo "$product"
+  echo $product
 }
 
 #######################################
@@ -121,7 +121,7 @@ divide_two_numbers() {
   read -p "Please input the first number as the dividend: " -r dividend
   read -p "Please input the second number as the divisor: " -r divisor
   local quotient=$(divide $dividend $divisor)
-  echo "$quotient"
+  echo $quotient
 }
 
 #######################################
@@ -138,7 +138,7 @@ divide() {
   dividend=$1
   divisor=$2
   local quotient=$(echo "$dividend / $divisor" | bc | awk '{printf "%f", $0}')
-  echo "$quotient"
+  echo $quotient
 }
 
 #######################################
